@@ -1,0 +1,13 @@
+image=imread('F:\nice.bmp');%读入一张图片
+LSB_image = image;
+image1=LSB_image(:,:,1);%取图像层
+imshow(image1);
+word=fopen('word.txt','r');%以二进制读取文件
+[word,word_len]=fread(word,'ubit1');
+[m,n]=size(image1);%计算图像的行列
+[row,col] = randinterval(image1,word_len);%生成产生的随机数
+p = 1;% p为秘密信息的位计数器
+for i=1:word_len
+    image1(row(i),col(i))=image1(row(i).col(i))-mod(image1(row(i),col(i)),2)+msg(p,1);%把
+    if()
+end
